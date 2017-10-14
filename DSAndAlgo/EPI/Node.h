@@ -23,6 +23,8 @@
 #include<climits>
 #include<iterator>
 #include<array>
+#include<iostream>
+
 using namespace std;
 
 

@@ -112,6 +112,9 @@
   <ItemGroup>
     <ClInclude Include="EPI\Node.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="HackerRank Problems\Moody Challenge\StackPile.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
