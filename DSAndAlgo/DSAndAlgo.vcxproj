@@ -112,10 +112,6 @@
   <ItemGroup>
     <ClInclude Include="EPI\Node.h" />
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="System Design\SnakeAndLadder Game\Client.cpp" />
-    <ClCompile Include="System Design\SnakeAndLadder Game\Game.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
