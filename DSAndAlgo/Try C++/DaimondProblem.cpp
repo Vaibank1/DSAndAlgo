@@ -8,24 +8,25 @@ class A
 public:
 	A()
 	{
+		cout << "Default Ctor called..\n";
 	}
-
+	A(int a):x(a){}
 	~A()
 	{
 	}
 
-	virtual void f()
-	{
-		cout << "A \n";
-	}
+	void f() { cout << "A\n"; }
+	
 private:
 	int x;
+	int y;
+	char ab;
 };
 
-class B:public A
+class B: virtual public A
 {
 public:
-	B()
+	B(int a):A(a)
 	{
 	}
 
@@ -33,19 +34,16 @@ public:
 	{
 	}
 
-	void f()
-	{
-		cout << "B\n";
-	}
+	
 private:
 
 };
 
 
-class C:public A
+class C:virtual public A
 {
 public:
-	C()
+	C(int a):A(a)
 	{
 	}
 
@@ -53,10 +51,7 @@ public:
 	{
 	}
 
-	virtual void f()
-	{
-		cout << "C \n";
-	}
+	
 private:
 
 };
@@ -64,23 +59,51 @@ private:
 
 
 
-class D : public A/*, public B*/
+class D : public C, public B
 {
+
+
 public:
 	//virtual void a() {}
+	//D(int a) :C(a), B(a) {}
+	D(int a) : A(a),C(a),B(a)
+	{
+	}
+
 
 };
 
 
+class Base
+{
+
+	int a;
+};
+
+class Derived : public Base
+{};
+
 int main()
 {
 
-	D obj;
+	D obj(5);
+	obj.f();
+	
+
 	cout << sizeof(int) << endl;
-	obj.A::f();
+	B b(1);
+	C c(2);
 	cout<<sizeof(A)<<endl;
 	cout << sizeof(B) << endl;
 	cout << sizeof(C) << endl;
 	cout << sizeof(D) << endl;
+
+	Base* bPtr = new Base();
+	Derived * dPtr = new Derived();
+	cout << sizeof(Derived) << endl;
+	Derived* dPtr = static_cast<Derived*>( bPtr);
+	
+	
+
 	return 0;
 }
