@@ -72,4 +72,4 @@ int main()
 	string out = removeKdigits(str, n);
 	return 0;
 }
-// This code is contributed by Gaurav Mamgain 
+
