@@ -72,8 +72,11 @@ public:
 
 int main()
 {
-	vector<int> arr = { 1,	0,	2	,1,	1,	3,	0,	4	,2	,5,	2,	2,	3	,1,	0,	2 };
+	int N = 6;
+	vector<int> arr(N);// = { 1,	0,	2	,1,	1,	3,	0,	4	,2	,5,	2,	2,	3	,1,	0,	2 };
 
+	for (int i = 0; i < N; i++)
+		arr[i] = 1;
 	BIT<int> bit(arr.size());
 
 	bit.createBIT(arr);

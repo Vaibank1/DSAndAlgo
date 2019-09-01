@@ -112,9 +112,6 @@
   <ItemGroup>
     <ClInclude Include="EPI\Node.h" />
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Pramp\ReverseMatrix.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -1,4 +1,4 @@
-#include "stdafx.h"
+
 #include <cmath>
 #include <cstdio>
 #include <queue>

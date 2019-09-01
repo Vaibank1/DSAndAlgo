@@ -25,22 +25,22 @@ int main()
 
 		unordered_map<string, vector<int>> map;
 
-		while (string::npos !=( end=str.find(delim, start)))
+		while (string::npos != (end = str.find(delim, start)))
 		{
-			string substr = str.substr(start, end - start) ;
+			string substr = str.substr(start, end - start);
 			if (map.end() == map.find(substr))
 			{
 				vector<int> vec;
 				vec.push_back(start);
 				map.insert({ substr, vec });
-			
+
 			}
 			else
 			{
 				map[substr].push_back(start);
 			}
 
-			start = end+ 1;
+			start = end + 1;
 		}
 		string substr = str.substr(start);
 		if (map.end() == map.find(substr))

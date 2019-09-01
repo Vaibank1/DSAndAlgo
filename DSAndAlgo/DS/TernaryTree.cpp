@@ -1,6 +1,6 @@
 // C program to demonstrate Ternary Search Tree (TST) insert, travese 
 // and search operations
-#include"stdafx.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #define MAX 50
