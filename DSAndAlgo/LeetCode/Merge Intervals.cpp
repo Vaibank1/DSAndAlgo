@@ -4,6 +4,40 @@
 using namespace std;
 
 
+int solution(vector<int> &A, vector<int> &B) 
+{
+
+	if (A.size() == 0)
+		return 0;
+	if (A.size() == 1)
+		return 1;
+
+	vector<pair<int,int>> intervals;
+	for (int i = 0; i < A.size(); i++)
+		intervals.push_back(make_pair( A[i],B[i] ));
+	sort(intervals.begin(), intervals.end(), [](const pair<int, int> &a, const pair<int, int> &b) {
+		return a.first < b.first; });
+
+	pair<int, int> res = intervals[0];
+	int count = 1;
+	for (auto & it : intervals) {
+		if (res.second >= it.first) {
+			if (res.second < it.second)
+				res.second = it.second;
+		}
+		else
+		{
+			res = it;
+			count++;
+		}
+	}
+
+	return count;
+
+}
+
+
+
 
 vector<vector<int>> merge(vector<vector<int>>& intervals) {
 	
@@ -34,10 +68,12 @@ vector<vector<int>> merge(vector<vector<int>>& intervals) {
 
 int main()
 {
-	vector<vector<int>> in = { {1,3 }, { 2,6 }, { 8,10 }, { 15,18 } };
+	//vector<vector<int>> in = { {1,3 }, { 2,6 }, { 8,10 }, { 15,18 } };
 
-	merge(in);
+	//merge(in);
 
-
+	vector<int> A = {1,12,42,70,36,-4,43,15};
+	vector<int> B = {5,15,44,72,36,2,69,24};
+	solution(A, B);
 	return 0;
 }
